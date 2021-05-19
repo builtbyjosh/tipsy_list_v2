@@ -9,8 +9,7 @@ const BreweryDetails = ({ brewery }) => {
       <p>
         {brewery.city}, {brewery.state}
       </p>
-      <a href={brewery.url}>{brewery.url}</a>
-      
+      <a href={brewery.url}>{brewery.url}</a>      
     </div>
   );
 };
