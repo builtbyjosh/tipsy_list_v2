@@ -7,17 +7,9 @@ export const createBreweryReview = (newBreweryReview, history) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ review: newBreweryReview }),
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        } else {
-          throw new Error(res.statusText);
-        }
-      })
-      .then((data) => {
-        dispatch({ type: "CREATE_REVIEW", payload: data });
-        history.push(`/breweries/${newBreweryReview.brewery_id}`)
-      });
+    }).then((data) => {
+      dispatch({ type: "CREATE_REVIEW", payload: data });
+      history.push(`/breweries/${newBreweryReview.brewery_id}`);
+    });
   };
 };
