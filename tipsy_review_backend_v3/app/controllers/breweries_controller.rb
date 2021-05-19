@@ -1,7 +1,7 @@
 class BreweriesController < ApplicationController
   def index
     breweries = Brewery.all
-    return json: breweries
+    render json: breweries.to_json( :include => [:reviews])
   end
 
 end
