@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import {connect} from 'react-redux'
+
+import { createBreweryReview } from '../redux/actions/breweryActions'
 
 class AddBreweryForm extends Component {
   state = {
@@ -8,7 +11,7 @@ class AddBreweryForm extends Component {
     // state: '',
     // url: '',
     content: "",
-    brewery_id: null
+    brewery_id: this.props.match.params.id
   };
 
   handleChange = (e) => {
@@ -17,12 +20,14 @@ class AddBreweryForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    this.props.createBreweryReview(this.state)
   };
 
   render() {
+    
     return (
       <div>
-        <h1>Add New Brewery</h1>
+        <h1>Add New Review</h1>
         <form>
           <input
             type="text"
@@ -30,11 +35,11 @@ class AddBreweryForm extends Component {
             value={this.state.content}
             onChange={this.handleChange}
           />
-          <button type="submit">Add Brewery</button>
+          <button type="submit">Add Review</button>
         </form>
       </div>
     );
   }
 }
 
-export default AddBreweryForm;
+export default connect(null, {createBreweryReview})(AddBreweryForm);
