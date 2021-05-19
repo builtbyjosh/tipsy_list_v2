@@ -11,9 +11,11 @@
 //   );
 // }
 import React, { Component } from "react";
-import BreweryListItem from "./BreweryListItem";
+import { connect } from "react-redux";
 
-export default class SearchListItems extends Component {
+import { createBrewery } from '../redux/actions/breweryActions'
+
+ class SearchListItems extends Component {
   state = {
     name: this.props.brewery.name,
     address: this.props.brewery.address,
@@ -22,8 +24,10 @@ export default class SearchListItems extends Component {
     url: this.props.brewery.website_url,
   };
 
-  handleClick = () => {
+  handleClick = (e) => {
     console.log(this.props.brewery.website_url)
+    this.props.createBrewery(this.state, this.props.history)
+    window.location.href='/breweries'
   } 
 
   render() {
@@ -37,3 +41,4 @@ export default class SearchListItems extends Component {
     );
   }
 }
+export default connect(null, {createBrewery})(SearchListItems)

@@ -8,7 +8,7 @@ export const getSavedBreweries = () => {
   };
 };
 
-export const getAPIBreweries = (query="holland") => {
+export const getAPIBreweries = (query) => {
   return (dispatch) => {
     fetch(`https://api.openbrewerydb.org/breweries/search?query=${query}`)
     .then((res) => res.json())
@@ -23,8 +23,16 @@ export const createBrewery = (newBreweryData) => {
   return (dispatch) => {
     fetch("http://localhost:3001/breweries", {
       method: "POST",
+      headers: {
+        Accepts: "application/json",
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({ brewery: newBreweryData }),
-    });
+    })
+    .then((data) => {
+      dispatch({type: "CREATE_BREWERY", payload: data})
+      
+    })
   };
 };
 
