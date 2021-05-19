@@ -4,6 +4,11 @@ class BreweriesController < ApplicationController
     render json: breweries.to_json( :include => [:reviews])
   end
 
+  def show
+    brewery = Brewery.find_by(id: params[:id])
+    render json: brewery.to_json(:include => [:reviews])
+  end
+
   def create
     brewery = Brewery.new(brewery_params)
     if brewery.save
