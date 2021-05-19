@@ -1,15 +1,10 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux'
 
-import { createBreweryReview } from '../redux/actions/breweryActions'
+import { createBreweryReview } from '../redux/actions/reviewActions'
 
 class AddBreweryForm extends Component {
   state = {
-    // name: '',
-    // address: '',
-    // city: '',
-    // state: '',
-    // url: '',
     content: "",
     brewery_id: this.props.match.params.id
   };
@@ -28,7 +23,7 @@ class AddBreweryForm extends Component {
     return (
       <div>
         <h1>Add New Review</h1>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input
             type="text"
             name="content"
