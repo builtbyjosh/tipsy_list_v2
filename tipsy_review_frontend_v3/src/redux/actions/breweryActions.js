@@ -8,6 +8,16 @@ export const getSavedBreweries = () => {
   };
 };
 
+export const getSingleBrewery = (id) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3001/breweries/${id}`)
+      .then((res) => res.json())
+      .then((data) =>
+        dispatch({ type: "FETCH_SINGLE_BREWERY", payload: data })
+      );
+  };
+};
+
 export const getAPIBreweries = (query) => {
   return (dispatch) => {
     fetch(`https://api.openbrewerydb.org/breweries/search?query=${query}`)
