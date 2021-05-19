@@ -4,4 +4,21 @@ class BreweriesController < ApplicationController
     render json: breweries.to_json( :include => [:reviews])
   end
 
+  def create
+    brewery = Brewery.new(brewery_params)
+    if brewery.save
+      render json: brewery
+    else
+      render json: {
+        error: 'Cannot Create',
+        status: 500
+      }, status: 500
+    end
+  end
+
+  private
+  def brewery_params
+    params.require(:brewery).permit(:name, :address, :city, :state, :url)
+  end
+
 end
