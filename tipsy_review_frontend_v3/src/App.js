@@ -4,6 +4,7 @@ import Home from './components/Home'
 import BreweryList from './components/BreweryList'
 import AddBreweryForm from './components/AddBreweryForm.js'
 import BreweryShow from './components/BreweryShow'
+import SearchAPIBreweries from './components/SearchAPIBreweries'
 
 // / home
 // /breweries - BreweryList
@@ -17,9 +18,9 @@ function App() {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/breweries' component={BreweryList} />
-        <Route exact path='/breweries/new' component={AddBreweryForm} />
         <Route exact path='/breweries/:id' component={BreweryShow} />
-
+        <Route exact path='/breweries/:id/new' component={AddBreweryForm} />
+        <Route exact path='/search' component={SearchAPIBreweries} />
       </Switch>
     </div>
   );
