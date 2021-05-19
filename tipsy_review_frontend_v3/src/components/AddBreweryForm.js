@@ -15,7 +15,7 @@ class AddBreweryForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.createBreweryReview(this.state)
+    this.props.createBreweryReview(this.state, this.props.history)
   };
 
   render() {

@@ -1,4 +1,4 @@
-export const createBreweryReview = (newBreweryReview) => {
+export const createBreweryReview = (newBreweryReview, history) => {
   return (dispatch) => {
     fetch("http://localhost:3001/reviews", {
       method: "POST",
@@ -17,6 +17,7 @@ export const createBreweryReview = (newBreweryReview) => {
       })
       .then((data) => {
         dispatch({ type: "CREATE_REVIEW", payload: data });
+        history.push(`/breweries/${newBreweryReview.brewery_id}`)
       });
   };
 };
