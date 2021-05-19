@@ -20,7 +20,7 @@ class BreweryShow extends Component {
       <div>
         <h1>Brewery Details</h1>
         <BreweryDetails brewery={this.props.brewery} />
-        <button onClick={this.handleClick}>Add A Review</button>
+        <button onClick={this.handleClick} className="circular ui button primary"><i class="beer icon"></i> Add A Review</button>
         <BreweryReview reviews={this.props.brewery.reviews} />
         
       </div>
