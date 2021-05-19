@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { getSavedBreweries } from "../redux/actions/breweryActions";
+import BreweryListItem from "./BreweryListItem";
 
 class BreweryList extends Component {
   componentDidMount() {
@@ -9,7 +10,14 @@ class BreweryList extends Component {
   }
 
   render() {
-    return <div>List of breweries</div>;
+    return (
+      <div>
+        <h1>Brewery List</h1>
+        {this.props.breweries.map((b) => (
+          <BreweryListItem brewery={b} />
+        ))}
+      </div>
+    );
   }
 }
 
