@@ -3,7 +3,7 @@ import breweryReducer from "./reducers/breweryReducer";
 import thunk from "redux-thunk";
 
 const rootReducer = combineReducers({
-  brewery: breweryReducer,
+  breweries: breweryReducer,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
