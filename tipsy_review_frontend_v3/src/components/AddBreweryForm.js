@@ -4,7 +4,7 @@ class AddBreweryForm extends Component {
   render() {
     return (
       <div>
-        
+        Save Brewery
       </div>
     );
   }

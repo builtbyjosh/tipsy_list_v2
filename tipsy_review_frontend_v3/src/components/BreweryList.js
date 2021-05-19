@@ -4,7 +4,7 @@ class BreweryList extends Component {
   render() {
     return (
       <div>
-        
+        List of breweries
       </div>
     );
   }
