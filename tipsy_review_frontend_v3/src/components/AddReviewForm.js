@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 import { createBreweryReview } from '../redux/actions/reviewActions'
 
-class AddBreweryForm extends Component {
+class AddReviewForm extends Component {
   state = {
     content: "",
     brewery_id: this.props.match.params.id
@@ -37,4 +37,4 @@ class AddBreweryForm extends Component {
   }
 }
 
-export default connect(null, {createBreweryReview})(AddBreweryForm);
+export default connect(null, {createBreweryReview})(AddReviewForm);

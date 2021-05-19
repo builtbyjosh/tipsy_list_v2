@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { getAPIBreweries } from "../redux/actions/breweryActions";
-import BreweryListItem from "./BreweryListItem";
+import SearchListItems from "./SearchListItems";
 
 class SearchAPIBreweries extends Component {
   state = {
@@ -10,16 +10,31 @@ class SearchAPIBreweries extends Component {
     breweries: [],
   };
 
-  componentDidMount() {
-    this.props.getAPIBreweries();
-  }
+  handleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.getAPIBreweries(this.state.query);
+  };
 
   render() {
     return (
       <div>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            name="query"
+            value={this.state.query}
+            onChange={this.handleChange}
+          />
+          <button type="submit">Search</button>
+        </form>
+
         <h1>Search Results</h1>
         {this.props.breweries.map((b) => (
-          <BreweryListItem brewery={b} />
+          <SearchListItems brewery={b} />
         ))}
       </div>
     );
