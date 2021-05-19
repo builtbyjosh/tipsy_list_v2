@@ -4,8 +4,6 @@ export default (state = [], action) => {
       return action.payload;
     case "CREATE_BREWERY":
       return [...state, action.payload];
-    case "CREATE_REVIEW":
-      return [...state, action.payload];
     default:
       return state;
   }
