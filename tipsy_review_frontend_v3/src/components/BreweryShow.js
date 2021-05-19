@@ -1,22 +1,28 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { getSingleBrewery } from "../redux/actions/breweryActions";
 import BreweryDetails from "./BreweryDetails";
 import BreweryReview from "./BreweryReview";
 
 class BreweryShow extends Component {
-
   componentDidMount() {
     this.props.getSingleBrewery(this.props.match.params.id);
   }
 
+  handleClick = () => {
+    this.props.history.push(`/breweries/${this.props.brewery.id}/new`);
+  };
+
   render() {
     return (
-      <div>        
+      <div>
         <h1>Brewery Details</h1>
         <BreweryDetails brewery={this.props.brewery} />
+        <button onClick={this.handleClick}>Add A Review</button>
         <BreweryReview reviews={this.props.brewery.reviews} />
+        
       </div>
     );
   }
