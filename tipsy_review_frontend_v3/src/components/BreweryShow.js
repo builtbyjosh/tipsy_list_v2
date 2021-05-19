@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { getSingleBrewery } from "../redux/actions/breweryActions";
-import breweryReducer from "../redux/reducers/breweryReducer";
+import BreweryDetails from "./BreweryDetails";
+import BreweryReview from "./BreweryReview";
 
 class BreweryShow extends Component {
 
@@ -14,7 +15,8 @@ class BreweryShow extends Component {
     return (
       <div>        
         <h1>Brewery Details</h1>
-        <h3>{this.props.brewery.name}</h3>
+        <BreweryDetails brewery={this.props.brewery} />
+        <BreweryReview reviews={this.props.brewery.reviews} />
       </div>
     );
   }
