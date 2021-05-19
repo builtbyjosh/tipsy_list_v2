@@ -5,35 +5,41 @@ const BreweryReview = ({ reviews = [] }) => {
     return <div>No Reviews Yet</div>;
   }
   return (
-<div class="ui relaxed divided list">
-  {reviews.map((r) => {
-    return (
-      <div className="item">
-        <i className="large user middle aligned icon"></i>
-        <div className="content">          
-          <div className="description">{r.content}</div>
-          <button  className="circular ui button negative mini"><i class="close icon"></i> Delete Review</button>
-          
-        </div>
-      </div>
-    );
-  })}
-</div>
+
+    <div className="ui cards">
+      {reviews.map((r) => {
+        return (
+          <div className="card">
+            <div className="content">
+              <div className="description">{r.content}</div>
+            </div>
+            <div className="ui bottom attached button">
+              <i className="trash alternate icon"></i>
+              Delete Review
+            </div>
+          </div>
+        );
+      })}
+    </div>
   );
 };
 
 export default BreweryReview;
 
-{/* <div class="ui relaxed divided list">
+{
+  /* <div className="ui cards">
   {reviews.map((r) => {
-    return (
-      <div class="item">
-        <i class="large github middle aligned icon"></i>
-        <div class="content">
-          <a class="header">Semantic-Org/Semantic-UI</a>
-          <div class="description">Updated 10 mins ago</div>
+    <div className="card">
+      <div className="content">      
+        <div className="description">
+          {r.content}
         </div>
       </div>
-    );
-  })}
-</div>; */}
+      <div className="ui bottom attached button">
+        <i className="add icon"></i>
+        Delete Review
+      </div>
+    </div> 
+  })}   
+</div> */
+}

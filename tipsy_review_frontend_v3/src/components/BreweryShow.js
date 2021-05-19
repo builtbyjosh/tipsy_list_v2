@@ -17,12 +17,17 @@ class BreweryShow extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <h1>Brewery Details</h1>
-        <BreweryDetails brewery={this.props.brewery} />
-        <button onClick={this.handleClick} className="circular ui button primary"><i class="beer icon"></i> Add A Review</button>
+        <div className="ui card">
+          <BreweryDetails brewery={this.props.brewery} />
+
+          <div className="ui bottom attached button" onClick={this.handleClick}>
+            <i className="add icon"></i>
+            Add New Review
+          </div>
+        </div>
         <BreweryReview reviews={this.props.brewery.reviews} />
-        
       </div>
     );
   }
