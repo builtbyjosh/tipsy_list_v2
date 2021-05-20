@@ -25,8 +25,10 @@ class BreweryShow extends Component {
             Add New Review
           </div>
         </div>
-        <br />
-        <BreweryReview reviews={this.props.brewery.reviews} />
+        <div className="ui segmented">
+          <BreweryReview reviews={this.props.brewery.reviews} />
+        </div>
+        
       </div>
     );
   }

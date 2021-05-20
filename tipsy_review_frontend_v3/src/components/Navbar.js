@@ -5,6 +5,10 @@ class Navbar extends Component {
   render() {
     return (
       <div className="ui secondary pointing menu">
+        <h1 className="ui header logo">
+          <i className="beer icon"></i>
+          <div className="content">Tipsy List</div>
+        </h1>
         <div className="right menu">
           <a className=" item" name={"home"} href={"/"}>
             Home
