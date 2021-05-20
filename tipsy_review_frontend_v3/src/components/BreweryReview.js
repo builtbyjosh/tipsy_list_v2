@@ -14,7 +14,7 @@ const BreweryReview = ({ reviews = [] }) => {
     );
   }
   return (
-    <div className="ui segment centered raised cards">
+    <div className="ui centered raised cards">
       {reviews.map((r) => {
         return (
           <div className="card">

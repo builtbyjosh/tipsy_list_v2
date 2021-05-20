@@ -36,8 +36,12 @@ class SearchAPIBreweries extends Component {
             </div>
           </form>
         </div>
+        <div className="ui card centered">
+          <div className="content">
+            <div className="center aligned header">Search Results</div>
+          </div>
+        </div>
 
-        <h1>Search Results</h1>
         <div className="container">
           <div className="ui centered raised cards">
             {this.props.breweries.map((b) => (

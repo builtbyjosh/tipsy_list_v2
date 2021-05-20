@@ -3,19 +3,21 @@
 }
 
 body {
-  background: url('./markus-spiske-R0PHtuR1ofs-unsplash.jpg') no-repeat center center fixed;
-  
+  background: url("./markus-spiske-R0PHtuR1ofs-unsplash.jpg") no-repeat center
+    center fixed;
 }
 
 #navbar {
   background: white;
-  position: fixed; 
-  top: 0; 
+  position: fixed;
+  top: 0;
   width: 100%;
 }
 
 .main {
-  padding-top: 150px;
+  padding-top: 100px;
   width: 90%;
   margin: auto;
 }
+
+

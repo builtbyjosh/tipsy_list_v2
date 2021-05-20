@@ -12,10 +12,12 @@ class BreweryList extends Component {
   render() {
     return (
       <div className="container">
-        <div className="ui segment">
-          <h1>Saved Breweries</h1>
+        <div className="ui card centered">
+          <div className="content">
+            <div className="center aligned header">Saved Brewery List</div>
+          </div>
         </div>
-        <div className="ui segment centered raised cards">
+        <div className="ui centered raised cards">
           {this.props.breweries.map((b) => (
             <BreweryListItem brewery={b} />
           ))}
