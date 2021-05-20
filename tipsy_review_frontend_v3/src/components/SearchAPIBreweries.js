@@ -22,15 +22,20 @@ class SearchAPIBreweries extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            name="query"
-            value={this.state.query}
-            onChange={this.handleChange}
-          />
-          <button type="submit">Search</button>
-        </form>
+        <div className="ui segment search-bar">
+          <form onSubmit={this.handleSubmit} className="ui form">
+            <div className="ui action fluid input">
+              <input
+                type="text"
+                name="query"
+                value={this.state.query}
+                onChange={this.handleChange}
+                placeholder="Search for New Brewery"
+              />
+              <div className="ui button" type="submit">Search</div>
+            </div>
+          </form>
+        </div>
 
         <h1>Search Results</h1>
         {this.props.breweries.map((b) => (
