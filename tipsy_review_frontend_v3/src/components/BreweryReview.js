@@ -2,10 +2,18 @@ import React from "react";
 
 const BreweryReview = ({ reviews = [] }) => {
   if (reviews.length === 0) {
-    return <div>No Reviews Yet</div>;
+    return (
+      <div className="ui centered raised cards">
+        <div className="card">
+        <div className="content">
+          <div className="description center aligned">No Reviews Yet!</div>
+        </div>
+      </div>
+      </div>
+      
+    );
   }
   return (
-
     <div className="ui centered raised cards">
       {reviews.map((r) => {
         return (
@@ -25,5 +33,3 @@ const BreweryReview = ({ reviews = [] }) => {
 };
 
 export default BreweryReview;
-
-
