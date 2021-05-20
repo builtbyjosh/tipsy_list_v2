@@ -17,13 +17,16 @@ function App() {
   return (
     <div >
       <Navbar />
-      <Switch>
+      <div className="main">
+        <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/breweries' component={BreweryList} />
         <Route exact path='/breweries/:id' component={BreweryShow} />
         <Route exact path='/breweries/:id/new' component={AddReviewForm} />
         <Route exact path='/search' component={SearchAPIBreweries} />
       </Switch>
+      </div>
+      
     </div>
   );
 }

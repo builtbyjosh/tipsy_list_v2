@@ -4,7 +4,7 @@ class Navbar extends Component {
   state = {};
   render() {
     return (
-      <div className="ui secondary pointing menu">
+      <div className="ui secondary pointing menu segment" id='navbar'>
         <h1 className="ui header logo">
           <i className="beer icon"></i>
           <div className="content">Tipsy List</div>
