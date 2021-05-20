@@ -5,6 +5,7 @@ import BreweryList from './components/BreweryList'
 import AddReviewForm from './components/AddReviewForm.js'
 import BreweryShow from './components/BreweryShow'
 import SearchAPIBreweries from './components/SearchAPIBreweries'
+import Navbar from "./components/Navbar";
 
 // / home
 // /breweries - BreweryList
@@ -15,6 +16,7 @@ import SearchAPIBreweries from './components/SearchAPIBreweries'
 function App() {
   return (
     <div >
+      <Navbar />
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/breweries' component={BreweryList} />
