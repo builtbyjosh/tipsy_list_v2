@@ -24,7 +24,7 @@ class SearchAPIBreweries extends Component {
       <div>
         <div className="ui segment search-bar">
           <form onSubmit={this.handleSubmit} className="ui form">
-            <div className="ui action fluid input">
+            <div className="ui icon fluid input field">
               <input
                 type="text"
                 name="query"
@@ -32,7 +32,7 @@ class SearchAPIBreweries extends Component {
                 onChange={this.handleChange}
                 placeholder="Search for New Brewery"
               />
-              <div className="ui button" type="submit">Search</div>
+              <i className="search icon"></i>
             </div>
           </form>
         </div>
