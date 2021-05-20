@@ -42,29 +42,3 @@ class AddReviewForm extends Component {
 
 export default connect(null, { createBreweryReview })(AddReviewForm);
 
-{
-  /* <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            name="content"
-            value={this.state.content}
-            onChange={this.handleChange}
-          />
-          <button type="submit">Add Review</button>
-        </form> */
-}
-
-{
-  /* <form className="ui form" onSubmit={this.handleSubmit}>
-  <div className="field">
-    <label>Review: </label>
-    <input
-            type="text"
-            name="content"
-            value={this.state.content}
-            onChange={this.handleChange}
-          />
-  </div>  
-  <button className="ui button" type="submit">Add Review</button>
-</form> */
-}

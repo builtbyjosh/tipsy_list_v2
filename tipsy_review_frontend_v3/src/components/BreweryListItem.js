@@ -19,23 +19,3 @@ export default function BreweryListItem({ brewery }) {
   );
 }
 
-{
-  /* <a href={`/breweries/${brewery.id}`}>{brewery.name}</a> */
-}
-
-{
-  /* <div className="ui cards">
-  <div className="card">
-    <div className="content">
-      <div className="header">Elliot Fu</div>
-      <div className="description">
-        Elliot Fu is a film-maker from New York.
-      </div>
-    </div>
-    <div className="ui bottom attached button">
-      <i className="add icon"></i>
-      Add New Review
-    </div>
-  </div>  
-</div> */
-}

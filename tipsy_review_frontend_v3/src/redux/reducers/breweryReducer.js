@@ -1,4 +1,4 @@
-export default (state = [], action) => {
+ const breweryReducer = (state = [], action) => {
   switch (action.type) {
     case "FETCH_SAVED_BREWERIES":
       return action.payload;
@@ -12,3 +12,4 @@ export default (state = [], action) => {
       return state;
   }
 };
+export default breweryReducer

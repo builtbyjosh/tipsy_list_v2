@@ -1,4 +1,4 @@
-export default (state = [], action) => {
+const reviewReducer = (state = [], action) => {
   switch (action.type) {
     case "CREATE_REVIEW":
       return [...state, action.payload];
@@ -6,3 +6,4 @@ export default (state = [], action) => {
       return state;
   }
 };
+export default reviewReducer
