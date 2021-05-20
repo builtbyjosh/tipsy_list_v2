@@ -38,9 +38,13 @@ class SearchAPIBreweries extends Component {
         </div>
 
         <h1>Search Results</h1>
-        {this.props.breweries.map((b) => (
-          <SearchListItems brewery={b} />
-        ))}
+        <div className="container">
+          <div className="ui centered raised cards">
+            {this.props.breweries.map((b) => (
+              <SearchListItems brewery={b} />
+            ))}
+          </div>
+        </div>
       </div>
     );
   }
