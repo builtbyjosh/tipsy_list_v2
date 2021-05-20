@@ -11,8 +11,7 @@ class BreweryList extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Brewery List</h1>
+      <div className="ui cards">
         {this.props.breweries.map((b) => (
           <BreweryListItem brewery={b} />
         ))}
