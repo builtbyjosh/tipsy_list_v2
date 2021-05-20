@@ -6,7 +6,8 @@ class Navbar extends Component {
     return (
 
       <div className="ui secondary pointing menu">
-        <a className=" item" name={"home"} href={'/'}>
+        <div className="right menu">
+          <a className=" item" name={"home"} href={'/'}>
           Home
         </a>
         <a className="item" name={"breweries"} href={'/breweries'}>
@@ -15,6 +16,8 @@ class Navbar extends Component {
         <a className="item" name={"search"} href={'/search'}>
           Search New Brewery
         </a>
+        </div>
+        
       </div>
     );
   }
