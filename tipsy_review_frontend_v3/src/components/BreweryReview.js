@@ -6,12 +6,12 @@ const BreweryReview = ({ reviews = [] }) => {
   }
   return (
 
-    <div className="ui cards">
+    <div className="ui centered raised cards">
       {reviews.map((r) => {
         return (
           <div className="card">
             <div className="content">
-              <div className="description">{r.content}</div>
+              <div className="description center aligned">{r.content}</div>
             </div>
             <div className="ui bottom attached button">
               <i className="trash alternate icon"></i>
@@ -26,20 +26,4 @@ const BreweryReview = ({ reviews = [] }) => {
 
 export default BreweryReview;
 
-{
-  /* <div className="ui cards">
-  {reviews.map((r) => {
-    <div className="card">
-      <div className="content">      
-        <div className="description">
-          {r.content}
-        </div>
-      </div>
-      <div className="ui bottom attached button">
-        <i className="add icon"></i>
-        Delete Review
-      </div>
-    </div> 
-  })}   
-</div> */
-}
+
