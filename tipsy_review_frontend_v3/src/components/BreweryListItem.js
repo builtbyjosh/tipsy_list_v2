@@ -12,8 +12,8 @@ export default function BreweryListItem({ brewery }) {
         <div className="header">{brewery.name}</div>
       </div>
       <div className="ui bottom attached button" onClick={redirect}>
-        <i className="add icon"></i>
-        Add New Review
+        <i className="eye icon"></i>
+        View Details
       </div>
     </div>
   );
