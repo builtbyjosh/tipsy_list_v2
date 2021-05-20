@@ -18,14 +18,3 @@ const BreweryDetails = ({ brewery }) => {
 };
 
 export default BreweryDetails;
-
-{
-  /* <div>
-      <h3>{brewery.name}</h3>
-      <p>{brewery.address}</p>
-      <p>
-        {brewery.city}, {brewery.state}
-      </p>
-      <a href={brewery.url}>{brewery.url}</a>      
-    </div> */
-}
