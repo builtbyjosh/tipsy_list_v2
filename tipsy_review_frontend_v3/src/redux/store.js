@@ -4,8 +4,8 @@ import thunk from "redux-thunk";
 import reviewReducer from "./reducers/reviewReducer";
 
 const rootReducer = combineReducers({
-  breweries: breweryReducer,
-  review: reviewReducer
+  breweries: breweryReducer
+
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

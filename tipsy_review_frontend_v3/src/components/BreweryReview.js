@@ -1,6 +1,7 @@
 import React from "react";
 
-const BreweryReview = ({ reviews = [] }) => {
+
+const BreweryReview = ({ reviews = [] , deleteReview}) => {
   if (reviews.length === 0) {
     return (
       <div className="ui centered raised cards">
@@ -13,6 +14,7 @@ const BreweryReview = ({ reviews = [] }) => {
       
     );
   }
+  
   return (
     <div className="ui centered raised cards">
       {reviews.map((r) => {
@@ -21,7 +23,10 @@ const BreweryReview = ({ reviews = [] }) => {
             <div className="content">
               <div className="description center aligned">{r.content}</div>
             </div>
-            <div className="ui bottom attached button">
+            <div className="ui bottom attached button" onClick={() => {
+              deleteReview(r.id)
+              
+              }}>
               <i className="trash alternate icon"></i>
               Delete Review
             </div>

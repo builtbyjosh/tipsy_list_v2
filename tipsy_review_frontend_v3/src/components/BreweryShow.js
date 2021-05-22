@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { getSingleBrewery } from "../redux/actions/breweryActions";
+import { getSingleBrewery, deleteBreweryReview } from "../redux/actions/breweryActions";
+
 import BreweryDetails from "./BreweryDetails";
 import BreweryReview from "./BreweryReview";
 
 class BreweryShow extends Component {
+  state = {
+    active: true,
+  };
+
   componentDidMount() {
     this.props.getSingleBrewery(this.props.match.params.id);
   }
@@ -25,9 +30,11 @@ class BreweryShow extends Component {
           </div>
         </div>
         <div className="ui segmented">
-          <BreweryReview reviews={this.props.brewery.reviews} />
+          <BreweryReview
+            reviews={this.props.brewery.reviews}
+            deleteReview={this.props.deleteBreweryReview}
+          />
         </div>
-        
       </div>
     );
   }
@@ -39,4 +46,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getSingleBrewery })(BreweryShow);
+export default connect(mapStateToProps, {
+  getSingleBrewery,
+  deleteBreweryReview,
+})(BreweryShow);

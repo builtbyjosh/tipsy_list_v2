@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { createBreweryReview } from "../redux/actions/reviewActions";
+import { createBreweryReview } from "../redux/actions/breweryActions";
 
 class AddReviewForm extends Component {
   state = {
