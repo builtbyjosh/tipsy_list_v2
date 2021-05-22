@@ -63,7 +63,8 @@ export const deleteBreweryReview = (reviewId, breweryId) => {
   return (dispatch) => {
     fetch(`http://localhost:3001/breweries/${breweryId}/reviews/${reviewId}`, {
       method: "DELETE",
-    })      
-      .then(dispatch({ type: "DELETE_REVIEW", payload: reviewId }));
+    })
+      .then((res) => res.json())
+      .then((data) => dispatch({ type: "DELETE_BREWERY_REVIEW", payload: data.id }));
   };
 };

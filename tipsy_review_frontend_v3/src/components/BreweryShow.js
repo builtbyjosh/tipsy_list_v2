@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { getSingleBrewery, deleteBreweryReview } from "../redux/actions/breweryActions";
+import {
+  getSingleBrewery,
+  deleteBreweryReview,
+} from "../redux/actions/breweryActions";
 
 import BreweryDetails from "./BreweryDetails";
 import BreweryReview from "./BreweryReview";
 
 class BreweryShow extends Component {
-
   componentDidMount() {
     this.props.getSingleBrewery(this.props.match.params.id);
   }
@@ -30,7 +32,6 @@ class BreweryShow extends Component {
           <BreweryReview
             reviews={this.props.brewery.reviews}
             deleteReview={this.props.deleteBreweryReview}
-            on
           />
         </div>
       </div>
