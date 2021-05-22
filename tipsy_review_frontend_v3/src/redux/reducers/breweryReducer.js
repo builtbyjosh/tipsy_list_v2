@@ -11,7 +11,7 @@ const breweryReducer = (state = [], action) => {
     case "CREATE_REVIEW":
       return action.payload;
     case "DELETE_BREWERY_REVIEW":
-      return action.payload;
+      return state.breweries.reviews.filter(review => review.id !== action.payload);
     default:
       return state;
   }

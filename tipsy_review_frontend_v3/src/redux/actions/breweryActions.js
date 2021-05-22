@@ -21,13 +21,12 @@ export const getSingleBrewery = (id) => {
 export const getAPIBreweries = (query) => {
   return (dispatch) => {
     fetch(`https://api.openbrewerydb.org/breweries/search?query=${query}`)
-    .then((res) => res.json())
-    .then((data) => {
-      
-      dispatch({type: "FETCH_API_BREWERIES", payload: data})
-    })
-  }
-}
+      .then((res) => res.json())
+      .then((data) => {
+        dispatch({ type: "FETCH_API_BREWERIES", payload: data });
+      });
+  };
+};
 
 export const createBrewery = (newBreweryData) => {
   return (dispatch) => {
@@ -38,17 +37,15 @@ export const createBrewery = (newBreweryData) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ brewery: newBreweryData }),
-    })
-    .then((data) => {
-      dispatch({type: "CREATE_BREWERY", payload: data})
-      
-    })
+    }).then((data) => {
+      dispatch({ type: "CREATE_BREWERY", payload: data });
+    });
   };
 };
 
-export const createBreweryReview = (newBreweryReview, history) => {
+export const createBreweryReview = (newBreweryReview, brewery_id, history) => {
   return (dispatch) => {
-    fetch("http://localhost:3001/reviews", {
+    fetch(`http://localhost:3001/breweries/${brewery_id}/reviews/`, {
       method: "POST",
       headers: {
         Accepts: "application/json",
@@ -57,16 +54,17 @@ export const createBreweryReview = (newBreweryReview, history) => {
       body: JSON.stringify({ review: newBreweryReview }),
     }).then((data) => {
       dispatch({ type: "CREATE_REVIEW", payload: data });
-      history.push(`/breweries/${newBreweryReview.brewery_id}`);
+      history.push(`/breweries/${brewery_id}`);
     });
   };
 };
 
-export const deleteBreweryReview = (reviewId) => {
+export const deleteBreweryReview = (reviewId, breweryId) => {
   return (dispatch) => {
-    fetch(`http://localhost:3001/reviews/${reviewId}`, {
+    fetch(`http://localhost:3001/breweries/${breweryId}/reviews/${reviewId}`, {
       method: "DELETE",
     })
-      .then((data) => dispatch({ type: "DELETE_REVIEW", payload: data}));
+      .then((res) => res.json())
+      .then((data) => dispatch({ type: "DELETE_REVIEW", payload: data }));
   };
 };

@@ -24,7 +24,7 @@ const BreweryReview = ({ reviews = [] , deleteReview}) => {
               <div className="description center aligned">{r.content}</div>
             </div>
             <div className="ui bottom attached button" onClick={() => {
-              deleteReview(r.id)
+              deleteReview(r.id, r.brewery_id)
               
               }}>
               <i className="trash alternate icon"></i>

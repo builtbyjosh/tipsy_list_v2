@@ -15,12 +15,16 @@ class AddReviewForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.createBreweryReview(this.state, this.props.history);
+    this.props.createBreweryReview(
+      this.state,
+      this.state.brewery_id,
+      this.props.history
+    );
   };
 
   render() {
     return (
-      <div className="ui container">        
+      <div className="ui container">
         <form className="ui form" onSubmit={this.handleSubmit}>
           <div className="field">
             <label>Review New Review: </label>
@@ -41,4 +45,3 @@ class AddReviewForm extends Component {
 }
 
 export default connect(null, { createBreweryReview })(AddReviewForm);
-
