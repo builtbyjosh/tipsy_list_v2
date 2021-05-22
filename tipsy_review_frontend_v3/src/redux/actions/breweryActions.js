@@ -65,6 +65,6 @@ export const deleteBreweryReview = (reviewId, breweryId) => {
       method: "DELETE",
     })
       .then((res) => res.json())
-      .then((data) => dispatch({ type: "DELETE_BREWERY_REVIEW", payload: data.id }));
+      .then((data) => dispatch({ type: "DELETE_BREWERY_REVIEW", payload: data }));
   };
 };
