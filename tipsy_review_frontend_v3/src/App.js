@@ -6,6 +6,7 @@ import AddReviewForm from './components/AddReviewForm.js'
 import BreweryShow from './components/BreweryShow'
 import SearchAPIBreweries from './components/SearchAPIBreweries'
 import Navbar from "./components/Navbar";
+import underage from "./components/underage";
 
 // / home
 // /breweries - BreweryList
@@ -24,6 +25,7 @@ function App() {
         <Route exact path='/breweries/:id' component={BreweryShow} />
         <Route exact path='/breweries/:id/new' component={AddReviewForm} />
         <Route exact path='/search' component={SearchAPIBreweries} />
+        <Route exact path='/underage' component={underage} />
       </Switch>
       </div>
       

@@ -21,7 +21,7 @@ const Home = () => {
           </div>
           <div className="column">
             <h3>
-              <a href="">NO</a>
+              <a href="/underage">NO</a>
             </h3>
           </div>
         </div>
