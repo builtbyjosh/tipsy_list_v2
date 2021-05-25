@@ -6,6 +6,8 @@ Tipsy List is an app where a user can save and keep track of personal reviews fo
 
 Use the package manager NPM to install the frontend portion of Tipsy List. Use bundle to install the rails API backend.
 
+Make sure to use the command rails s -p 3001 when starting the backend server. Or Modify the brewery actions in frontend to point to your api url.
+
 ```bash
 #frontend
 npm install
