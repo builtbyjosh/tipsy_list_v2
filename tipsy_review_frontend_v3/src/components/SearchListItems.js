@@ -26,7 +26,7 @@ class SearchListItems extends Component {
 
   handleClick = (e) => {
     
-    this.props.createBrewery(this.state, this.props.history);
+    this.props.createBrewery(this.state);
     window.location.href = "/breweries";
   };
 
