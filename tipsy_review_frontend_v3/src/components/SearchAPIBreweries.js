@@ -6,8 +6,7 @@ import SearchListItems from "./SearchListItems";
 
 class SearchAPIBreweries extends Component {
   state = {
-    query: "",
-    breweries: [],
+    query: ""
   };
 
   handleChange = (e) => {
