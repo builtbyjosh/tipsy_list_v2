@@ -6,7 +6,7 @@ import SearchListItems from "./SearchListItems";
 
 class SearchAPIBreweries extends Component {
   state = {
-    query: ""
+    query: "",
   };
 
   handleChange = (e) => {
@@ -31,7 +31,9 @@ class SearchAPIBreweries extends Component {
                 onChange={this.handleChange}
                 placeholder="Search for New Brewery"
               />
-              <i className="search icon"></i>
+              <button className="ui button" type="submit">
+                <i className="search icon link "></i>Search
+              </button>
             </div>
           </form>
         </div>
